@@ -4,6 +4,7 @@ import 'package:LessApp/mainStatsPage.dart';
 import 'package:LessApp/debug.dart';
 import 'package:LessApp/communityStats.dart';
 import 'package:LessApp/fullPersonalStats.dart';
+import 'package:LessApp/summary.dart';
 
 class HomePage extends StatefulWidget{
 
@@ -24,6 +25,7 @@ class HomePageState extends State<HomePage> {
     new MainStatsPage(),
     new CommunityStatsPage(),
     new DebugPage(),
+    new summaryPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -48,7 +50,7 @@ class HomePageState extends State<HomePage> {
             title: Text('Stats'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.assessment),
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
@@ -58,11 +60,14 @@ class HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.warning),
             title: Text('!!FOR DEBUG!!'),
-
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Summary'),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.green[900],
+        selectedItemColor: Colors.blue[200],
         unselectedItemColor: Colors.grey[500],
         type: BottomNavigationBarType.fixed,
         onTap: _onItemTapped,
